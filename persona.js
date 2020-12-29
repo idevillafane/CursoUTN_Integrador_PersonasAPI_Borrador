@@ -27,7 +27,7 @@ app.post('/persona', async (req, res)) => {
         // Con estas lineas se deberia poder chequear si ya esta registrado el email:
 
         var chequearEmail = 'SELECT * FROM persona WHERE email = ?';
-        let respuesta = query(query, [req.body.email]);
+        let respuesta = qy(query, [req.body.email]);
 
         if (respuesta.length > 0) {
             throw new Error("El email ya se encuentra registrado");
